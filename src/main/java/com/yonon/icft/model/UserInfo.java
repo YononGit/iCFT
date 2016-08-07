@@ -3,7 +3,7 @@ package com.yonon.icft.model;
 public class UserInfo {
 	private int age;
 	private String birthday;
-	private double captial;
+	private double capital;
 	private String city;
 	private String country;
 	private String createTime;
@@ -17,8 +17,8 @@ public class UserInfo {
 	public String getBirthday() {
 		return birthday;
 	}
-	public double getCaptial() {
-		return captial;
+	public double getCapital() {
+		return capital;
 	}
 	public String getCity() {
 		return city;
@@ -47,8 +47,8 @@ public class UserInfo {
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
-	public void setCaptial(double captial) {
-		this.captial = captial;
+	public void setCapital(double capital) {
+		this.capital = capital;
 	}
 	public void setCity(String city) {
 		this.city = city;

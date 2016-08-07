@@ -23,4 +23,13 @@ public class UserServiceImpl implements UserService{
 		return userDao.addUser(user);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.yonon.icft.service.UserService#getUserByUsername(java.lang.String)
+	 */
+	@Override
+	public User getUserByUsername(String name) {
+		// TODO Auto-generated method stub
+		return userDao.getUserByUsername(name);
+	}
+
 }

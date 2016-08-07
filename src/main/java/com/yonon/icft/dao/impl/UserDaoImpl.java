@@ -20,4 +20,13 @@ public class UserDaoImpl implements UserDao {
 			return false;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.yonon.icft.dao.UserDao#getUserByUsername(java.lang.String)
+	 */
+	@Override
+	public User getUserByUsername(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

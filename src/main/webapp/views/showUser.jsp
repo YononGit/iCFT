@@ -8,5 +8,7 @@
 </head>
 <body>
 	Hello!
+	<br />
+	${user.name}
 </body>
 </html>

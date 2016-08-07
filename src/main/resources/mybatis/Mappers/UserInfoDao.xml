@@ -15,23 +15,16 @@
 		<result column="UPDATETIME" property="updateTime" javaType="String" />
 	</resultMap>
 
-	<select id="getUserInfo" parameterType="Integer"
-		resultMap="userInfoResultMap">
-		SELECT * FROM iCFT_USER WHERE name=#{name} AND psw=#{psw}
+	<select id="getUserInfo" parameterType="Integer" resultMap="userInfoResultMap">
+		SELECT * FROM iCFT_USER_INFO WHERE id=#{id}
 	</select>
-	<!-- 
-		//获取mapper对象
-	 	DicCityMapper cityMapper = (DicCityMapper) SpringContextUtil.getBean("dicCityMapper"); 
-		int row = cityMapper.insert(city); 
-		//insrt不再返回主键，只返回响应行数，这点和ibatis不同了
-		 System.out.println("响应的行数："+row); 
-		//取得自增的标识列 ID的值 
-		System.out.println("新插入的数据的ID："+city.getId()); 
-	-->
+	<!-- //获取mapper对象 DicCityMapper cityMapper = (DicCityMapper) SpringContextUtil.getBean("dicCityMapper"); 
+		int row = cityMapper.insert(city); //insrt不再返回主键，只返回响应行数，这点和ibatis不同了 System.out.println("响应的行数："+row); 
+		//取得自增的标识列 ID的值 System.out.println("新插入的数据的ID："+city.getId()); -->
 	<insert id="addUserInfo" parameterType="com.yonon.icft.model.UserInfo"
 		useGeneratedKeys="true" keyProperty="id" flushCache="true">
 		INSERT INTO
-		iCFT_USER
-		(name,psw,userInfoID) VALUES (#{name},#{psw}, #{userInfoID})
+		iCFT_USER_INFO
+		(NINAME,CAPITAL,SEX,AGE,BIRTHDAY,COUNTRY,CITY,CREATETIME,UPDATETIME) VALUES (#{niname},#{capital},#{sex},#{age},#{birthday},#{country},#{city},#{createTime},#{updateTime})
 	</insert>
 </mapper> 

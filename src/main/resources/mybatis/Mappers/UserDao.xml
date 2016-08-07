@@ -6,14 +6,18 @@
 		<id column="ID" property="id" javaType="Integer" />
 		<result column="USERNAME" property="name" javaType="String"/>
 		<result column="PSW" property="psw" javaType="String"/>
-		<result column="USERINFOID" property="userInfoID" javaType="String"/>
+		<result column="USERINFOID" property="userInfoID" javaType="Integer"/>
 	</resultMap>
 	<select id="getUser" parameterType="com.yonon.icft.model.User"
 		resultMap="userResultMap">
-		SELECT * FROM iCFT_USER WHERE name=#{name} AND psw=#{psw}
+		SELECT * FROM iCFT_USER WHERE USERNAME=#{name} AND PSW=#{psw}
 	</select>
 	<insert id="addUser" parameterType="com.yonon.icft.model.User"
 		flushCache="true">
-		INSERT INTO iCFT_USER (name,psw,userInfoID) VALUES (#{name},#{psw}, #{userInfoID})
+		INSERT INTO iCFT_USER (USERNAME,PSW,USERINFOID) VALUES (#{name},#{psw},#{userInfoID})
 	</insert>
+	<select id="getUserByUsername" parameterType="String"
+		resultMap="userResultMap">
+		SELECT * FROM iCFT_USER WHERE USERNAME=#{name}
+	</select>
 </mapper> 
