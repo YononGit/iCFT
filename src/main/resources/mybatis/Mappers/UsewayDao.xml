@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yonon.icft.dao.UsewayDao">
+	<resultMap type="com.yonon.icft.model.Useway" id="usewayResultMap">
+		<id column="ID" property="id" javaType="Integer" />
+		<result column="USEWAYNAME" property="usewayName" javaType="String" />
+	</resultMap>
+
+	<select id="getAllUseway" resultMap="usewayResultMap">
+		SELECT
+		* FROM iCFT_USEWAY
+	</select>
+
+	<insert id="addUseway" parameterType="com.yonon.icft.model.Useway"
+		flushCache="true">
+		INSERT INTO
+		iCFT_USEWAY(USEWAYNAME) VALUES (#{usewayName})
+	</insert>
+
+	<update id="updateUseway" parameterType="com.yonon.icft.model.Useway">
+		UPDATE iCFT_USEWAY SET
+		USEWAYNAME=#{usewayName} WHERE id=#{id}
+	</update>
+
+	<delete id="deleteUseway" parameterType="Integer">
+		DELETE FROM iCFT_USEWAY
+		WHERE id=#{id}
+	</delete>
+</mapper> 

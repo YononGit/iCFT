@@ -1,5 +1,7 @@
 package com.yonon.icft.test;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -24,5 +26,22 @@ public class TestCase {
 		user.setName("Yonon");
 		user.setPsw("1234");
 		System.out.println(userService.getUser(user));
+	}
+	@Test
+	public void testList(){
+		ArrayList<String> list = new ArrayList<String>();
+		list.add("lisi");
+		list.add("lisi");
+		list.add("lisi");
+		list.add("lisi");
+		list.add("lisi");
+		list.add("lisi");
+		list.add("lisi");
+		int i = 0;
+		for(String s : list){
+			if(i == 2) 
+				list.remove(i);
+			i ++;
+		}
 	}
 }
