@@ -1,6 +1,5 @@
 package com.yonon.icft.dao.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.yonon.icft.dao.UserDao;
 import com.yonon.icft.model.User;

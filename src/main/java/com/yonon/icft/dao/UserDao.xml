@@ -2,12 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yonon.icft.dao.UserDao">
+	<resultMap type="com.yonon.icft.model.User" id="userResultMap">
+		<id column="ID" property="id" javaType="Integer" />
+		<result column="USERNAME" property="name" javaType="String"/>
+		<result column="PSW" property="psw" javaType="String"/>
+		<result column="USERINFOID" property="userInfoID" javaType="String"/>
+	</resultMap>
 	<select id="getUser" parameterType="com.yonon.icft.model.User"
-		resultType="com.yonon.icft.model.User">
-		SELECT id FROM user WHERE name=#{name} AND psw=#{psw}
+		resultMap="userResultMap">
+		SELECT * FROM iCFT_USER WHERE name=#{name} AND psw=#{psw}
 	</select>
 	<insert id="addUser" parameterType="com.yonon.icft.model.User"
 		flushCache="true">
-		INSERT INTO user (name,psw) VALUES (#{name},#{psw})
+		INSERT INTO iCFT_USER (name,psw,userInfoID) VALUES (#{name},#{psw}, #{userInfoID})
 	</insert>
 </mapper> 
