@@ -35,6 +35,7 @@ public class UserController {
 	@RequestMapping(value = "/register")
 	public String regist(HttpServletRequest request, Model model){
 		log.info("×¢²áÓÃ»§");
+		
 		return "../views/index.jsp";
 	}
 }
